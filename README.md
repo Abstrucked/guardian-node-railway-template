@@ -1,8 +1,13 @@
-# Strapi example
+# Hychain Guardian Node
 
 This example deploys self-hosted version of Strapi. Internally it uses a PostgreSQL database to store the data.
+
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/MfCYhw?referralCode=uBfi5A)
+
 ___
+⚠️ *Owning a [nodekey](https://docs.hychain.com/docs/what-do-node-keys-cost) is mandatory to be able to run a guardian node*
+___
+
 ### ✨ Features
 * Easy setup
 * Railway compose-ability for services
