@@ -1,0 +1,11 @@
+services:
+  simplified-guardian:
+    image: mchmatt/simplified-guardian
+    container_name: simplified-guardian
+    restart: always
+    env_file:
+      - .env
+    command: >
+      --restart=always
+      -e LOOP_INTERVAL_MS=${LOOP_INTERVAL_MS}
+      -e PRIVATE_KEY=${PRIVATE_KEY}
