@@ -10,7 +10,6 @@ ___
 
 ### ✨ Features
 * Easy setup
-* Railway compose-ability for services
 * built using [mchmatt docker image](https://hub.docker.com/r/mchmatt/simplified-guardian)
 
 ### 💁 How to use

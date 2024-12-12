@@ -1,17 +1,17 @@
-# Dockerfile
+# Use Ubuntu 22.04 as the base image
 FROM ubuntu:22.04
 
 # Set working directory
 WORKDIR /app
 
+# Copy the necessary files into the container
+COPY . .
 
-# Copy the curardian-cli file to the container
-COPY validation-engine /app/
-COPY guardian-cli-linux /app/
-
-# Ensure the file is executable
+# Ensure the guardian-cli-linux binary is executable
 RUN chmod +x guardian-cli-linux
 
-CMD ["ls"]
-# Set the default command for the container
-CMD ["/bin/sh", "-c", "./guardian-cli-linux --restart=always -e LOOP_INTERVAL_MS=${LOOP_INTERVAL_MS} -e PRIVATE_KEY=${PRIVATE_KEY}"]
+# Install any necessary dependencies (if required by the binary)
+RUN apt-get update && apt-get install -y libstdc++6 libgcc1 libc6
+RUN ls "-la"
+# Specify the default command for the container
+CMD ["/bin/sh", "-c", "./guardian-cli-linux guardian run ${PRIVATE_KEY} --loop-interval-ms ${LOOP_INTERVAL_MS}"]
